@@ -2,7 +2,7 @@
 using namespace std;
 const int maxn = 2e5+69, k = 19, bits=30;
 vector<int> g[maxn];
-int n, a[maxn], up[maxn][k], tin[maxn], tout[maxn], timer, d[maxn];
+int n, a[maxn], up[maxn][k], tin[maxn], tout[maxn], timer, d[maxn], r[maxn][k];
 
 void dfs(int v, int p, vector<int> b){
    tin[v] = ++timer; //first time to visit node v
