@@ -26,6 +26,17 @@ int lca(int u, int v){//retrieve the lowest common ancester between u and v
    }
    return up[u][0];
 }
+int OR(int u, int dis){ //bit jumps...
+   int res = a[u];
+   for(int j = 0 ; j < bits; j++)
+      if(dis & (1<<j)) res |= r[u][j], u=up[u][j];
+   return res;
+}
+int Qry(int u, int v){
+   int lc = lca(u,v);
+   return OR(u, d[u]-d[lc]) | OR(v, d[v]-d[lc]);
+}
+
 int main(){
    return 0;
 }
