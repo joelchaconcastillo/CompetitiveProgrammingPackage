@@ -6,7 +6,7 @@
 #include <bits/stdc++.h>
 #define MAX_N 1111111
 using namespace std;
-int N, Q, currentAnswer, K=1, S;
+int N, Q, currentAnswer, K=1;
 struct query{
    int id, l, r, lBlock;
    bool operator <(const query& rhs){
@@ -40,6 +40,7 @@ int main(){
 	   queries[i].r--;
 	   queries[i].id=i;
 	   queries[i].lBlock=queries[i].l/SQRT_N;
+
    }
    sort(queries.begin(), queries.end()); 
    vector<int>ans(Q, 0);
